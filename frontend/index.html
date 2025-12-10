@@ -5,17 +5,40 @@
     <title>Mini Store</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>🛒 Mini Store</h1>
+    <div class="layout">
+      <!-- HEADER -->
+      <header>
+        <h1>🛒 Mini Store</h1>
+        <p>Ajoute un produit et il apparaîtra instantanément à droite.</p>
+      </header>
 
-    <form id="addForm">
-      <input type="text" name="name" placeholder="Nom du produit" required />
-      <input type="number" name="price" placeholder="Prix" required />
-      <input type="file" name="image" accept="image/*" required />
-      <button type="submit">Ajouter</button>
-    </form>
+      <main class="content">
+        <!-- FORMULAIRE À GAUCHE -->
+        <div class="card">
+          <h2>Ajouter un produit</h2>
 
-    <div id="products"></div>
+          <form id="addForm">
+            <label>Nom du produit</label>
+            <input type="text" name="name" required />
+
+            <label>Prix (€)</label>
+            <input type="number" name="price" required />
+
+            <label>Image</label>
+            <input type="file" name="image" accept="image/*" required />
+
+            <button type="submit">Ajouter</button>
+          </form>
+        </div>
+
+        <!-- LISTE DES PRODUITS À DROITE -->
+        <div id="products" class="container"></div>
+      </main>
+    </div>
+
+    <div id="toast"></div>
 
     <script src="script.js"></script>
   </body>

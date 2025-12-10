@@ -1,5 +1,11 @@
+/*const API = "http://localhost:8000"*/
+const API =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8000"
+    : `http://${window.location.hostname}:8000`;
+
 async function loadProducts() {
-  const res = await fetch("http://localhost:8000/api/products");
+  const res = await fetch(`${API}/api/products`);
   const products = await res.json();
 
   const container = document.getElementById("products");
@@ -19,7 +25,7 @@ async function loadProducts() {
 }
 
 async function deleteProduct(id) {
-  await fetch(`http://localhost:8000/api/products/${id}`, { method: "DELETE" });
+  await fetch(`${API}/api/products/${id}`, { method: "DELETE" });
   loadProducts();
 }
 
@@ -28,7 +34,7 @@ document.getElementById("addForm").onsubmit = async (e) => {
 
   const data = new FormData(e.target);
 
-  await fetch("http://localhost:8000/api/products", {
+  await fetch(`${API}/api/products`, {
     method: "POST",
     body: data,
   });
