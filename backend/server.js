@@ -5,7 +5,11 @@ const Database = require("better-sqlite3");
 const path = require("path");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://192.168.56.10:8080",
+  })
+);
 app.use(express.json());
 app.use(fileUpload());
 
