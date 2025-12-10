@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🛒 Mini Store</h1>
+
+    <form id="addForm">
+      <input type="text" name="name" placeholder="Nom du produit" required />
+      <input type="number" name="price" placeholder="Prix" required />
+      <input type="file" name="image" accept="image/*" required />
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <div id="products"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
